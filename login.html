@@ -20,13 +20,9 @@
 	<body>
 		<div class="login-bg">
             <div class="content">
-                <div class="title">
-                    <h2>登录</h2>
-                </div>
+               
                 <div class="form-box">
-                    <div class="login-center">
-                        <span class="t-name"></span><input type="text" name="" id="tel_num" class="inp account-inp" value="" placeholder="请输入账号">
-                    </div>
+                   
                     <div class="login-center">
                         <span class="t-name">手机号：</span><input type="text" name="" id="tel_num" class="inp phone-inp" value="" placeholder="请输入您的手机号">
                     </div>
@@ -36,8 +32,8 @@
                             <span class="code-btn">获取验证码</span>
                         </div>
                     </div>
-                    <div class="login-button">立即注册</div>
-                    <div class="registered">已有账号？直接<a href="" class = "link">登录</a></div>
+                    <div class="login-button">登录</div>
+                    
                 </div>
             </div>
         </div>
@@ -51,9 +47,14 @@ html,body {
 	height:100%;
 }
 .login-bg {
-	height:100%;
-	background-image:linear-gradient(160deg,#00b3ff 100%);
-	position:relative;
+	
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+ 
+
 }
 .content {
 	position:absolute;
@@ -124,15 +125,7 @@ html,body {
 	line-height:50px;
 	cursor:pointer;
 }
-.registered{
 
-    text-align: right;
-}
-.registered .link{
-    color: rgb(0, 76, 255);
-    text-decoration: none;
-
-}
 
     </style>
 </html>
