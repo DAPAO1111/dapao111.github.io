@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>wisdombank_login</title>
-		<link rel="stylesheet" href="login.css">
+		<meta charset="utf-8">
+		<title>login</title>
+		<link rel="stylesheet" type="text/css" href="pageChange.css" />
+		<script src="pageChange.js"></script>
+		<script src="Click.js"></script>
 	</head>
 	<body>
-		<div id="content">
-			<div id="login_form">
-				<div class="login_title">
-					欢迎登录
-				</div>
-				<form action="" >
-					<div id="login_content">
-					<br>
-					<div><img src="img/user.png" class="icon_btn"></div>
-					<input type="text" placeholder="请输入账号" name="username" class="text"/>
-					<br>
-					<div><img src="img/password.png" class="icon_btn"></div>
-					<input type="password" placeholder="请输入密码" name="password" class="text"/>
-					<br>	
-					<div><img src="img/vercode.png" class="icon_btn"></div>
-					<input type="text" placeholder="请输入验证码" name="vcode" id="vcode" />
-					<img  id="icode" src="img/code.png" style="margin-top: -10%; margin-left: 55%;" />                	
-					<div id="login_passwd">
-						<a href="#">忘记密码？</a>
-					</div>					
-					<input  type="submit" value="登录" class="btn" >
-					<br>
-					<div id="login_copyright">
-						Power By 李洪涛 &copy;CopyRight 2020
-					</div>					
-					</div>			
-				</form>
+		<div class="control">
+			<div class="item">
+				<div class="active">登录</div><div>注册</div>
 			</div>
-		</div>	
+			<div class="content">
+				<div style="display: block;">
+					<p>账号</p>
+					<input type="text" placeholder="username" id="login-username"/>
+					<p>密码</p>
+					<input type="password" placeholder="password" id="login-password"/>
+					<br/>
+					<input type="submit" value="登录" onclick="login()"/>
+				</div>
+				<div>
+					<p>用户名</p>
+					<input type="text" placeholder="username" id="register-username"/>
+					<p>密码</p>
+					<input type="password" placeholder="password" id="register-password"/>
+					<p>邮箱</p>
+					<input type="text" placeholder="email" id="register-email"/>
+					<br/>
+					<input type="submit" value="登录" onclick="register()"/>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
+
+
