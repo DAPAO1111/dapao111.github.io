@@ -1,108 +1,138 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>注册模块</title>
-		<meta charset="utf-8">
-		<style>
-			#vcode {
-				height: 35px;
-				width: 40%;
-				font-size: 15pt;
-				margin-left: 15%;
-				border-radius: 5px;
-				border: 1;
-				padding-left: 8px;
-			}
-			#code {
-				color: #ffffff;
-				/*字体颜色白色*/
-				background-color: #000000;
-				font-size: 20pt;
-				font-family: "华康娃娃体W5";
-				padding: 5px 35px 10px 35px;
-				margin-left: 5%;
-				cursor: pointer;
-			}
-			#search_pass_link {
-				width: 70%;
-				text-align: right;
-				margin: 0 auto;
-				padding: 5px;
-			}
-			.btns {
-				width: 30%;
-				margin-left: 13%;
-				height: 40px;
-				border: 0;
-				font-size: 14pt;
-				font-family;
-				"微软雅黑";
-				background-color: #FC5628;
-				color: #ffffff;
-				cursor: pointer;
-				/*设置指针鼠标的样式*/
-				border-radius: 20px;
-				/*设置圆角样式*/
-				border: 0;
-			}
-		</style>
+		<meta charset="UTF-8">
+		<title>login</title>
+        
+		
 	</head>
-
-	<body leftmargin="0" onload="changeImg()">
-		<div class="main_bar">
-				<form action="login.html" onsubmit="return check()">
-						<input type="text" id="vcode" placeholder="验证码" value="验证码" onfocus="this.value=''" onblur="if(this.value=='')this.value='验证码'" /><span id="code" title="看不清，换一张"></span>
-						<div id="search_pass_link">
-						</div>
-						<input type="submit" id="submit" value="登录" class="btns" onmouseover="this.style.backgroundColor='#FF8D00'" onmouseout="this.style.backgroundColor='#FC5628'">
-						<input type="reset"  value="取消" class="btns" onmouseover="this.style.backgroundColor='#FF8D00'" onmouseout="this.style.backgroundColor='#FC5628'">
-
-				</form>
-		</div>
+    <style>
+        
+    </style>
+	<body>
+		<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+		
+	</head>
+	<body>
+		<div class="login-bg">
+            <div class="content">
+                <div class="title">
+                    <h2>登录</h2>
+                </div>
+                <div class="form-box">
+                    <div class="login-center">
+                        <span class="t-name"></span><input type="text" name="" id="tel_num" class="inp account-inp" value="" placeholder="请输入账号">
+                    </div>
+                    <div class="login-center">
+                        <span class="t-name">手机号：</span><input type="text" name="" id="tel_num" class="inp phone-inp" value="" placeholder="请输入您的手机号">
+                    </div>
+                    <div class="login-center">
+                        <span class="t-name">验证码：</span><input type="text" name="" id="code_num" class="inp code-inp" value="" placeholder="请输入您的验证码">
+                        <div class="get-code">
+                            <span class="code-btn">获取验证码</span>
+                        </div>
+                    </div>
+                    <div class="login-button">立即注册</div>
+                    <div class="registered">已有账号，直接<a href="" class = "link">登录</a></div>
+                </div>
+            </div>
+        </div>
 	</body>
+    <style>
+        * {
+	margin:0;
+	padding:0;
+}
+html,body {
+	height:100%;
+}
+.login-bg {
+	height:100%;
+	background-image:linear-gradient(160deg,#00b3ff 100%);
+	position:relative;
+}
+.content {
+	position:absolute;
+	width:320px;
+	height:400px;
+	background:rgba(255,255,255,.9);
+	border-radius:10px;
+	top:50%;
+	left:50%;
+	margin-left:-160px;
+	margin-top:-230px;
+	padding:10px 20px;
+	box-sizing:border-box;
+}
+.title h2 {
+	font-size:22px;
+	line-height:60px;
+	color:#333;
+	font-weight:bold;
+	text-align:center;
+}
+.login-center {
+	height:50px;
+	border-radius:5px;
+	border:1px solid #00ACED;
+	margin-bottom:30px;
+	line-height:50px;
+	padding:0 10px;
+	box-sizing:border-box;
+}
+.login-center .t-name {
+	font-size:14px;
+	float:left;
+	height:100%;
+	width:58px;
+}
+.login-center .inp {
+	font-size:14px;
+	float:left;
+	border:none;
+	background:transparent;
+	height:100%;
+	outline:none;
+}
+.login-center .inp.code-inp {
+	width:120px;
+}
+.login-center .get-code {
+	float:right;
+	height:100%;
+}
+.login-center .get-code .code-btn {
+	color:#a07941;
+	font-size:12px;
+	border:1px solid #a07941;
+	border-radius:5px;
+	padding:5px;
+	box-sizing:border-box;
+	cursor:pointer;
+}
+.login-button {
+	background-color:#1e90ff;
+	height:50px;
+	border-radius:5px;
+	font-size:18px;
+	color:#fff;
+	text-align:center;
+	line-height:50px;
+	cursor:pointer;
+}
+.registered{
 
+    text-align: right;
+}
+.registered .link{
+    color: rgb(0, 76, 255);
+    text-decoration: none;
 
-	<script type="text/javascript">
+}
 
-		var code; //声明一个变量用于存储生成的验证码
-		document.getElementById("code").onclick = changeImg;
-		function changeImg() {
-			var arrays = new Array(
-				'1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
-				'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
-				'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-				'u', 'v', 'w', 'x', 'y', 'z',
-				'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
-				'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-				'U', 'V', 'W', 'X', 'Y', 'Z'
-			);
-			code = ''; //重新初始化验证码
-			//alert(arrays.length);
-			//随机从数组中获取四个元素组成验证码
-			for(var i = 0; i < 4; i++) {
-				//随机获取一个数组的下标
-				var r = parseInt(Math.random() * arrays.length);
-				code += arrays[r];
-			}
-			document.getElementById('code').innerHTML = code; //将验证码写入指定区域
-		}
-
-
-		//效验验证码(表单被提交时触发)
-		function check() {
-
-			//获取用户输入的验证码
-			var input_code = document.getElementById('vcode').value;
-			if(input_code.toLowerCase() == code.toLowerCase()) {
-				//验证码正确(表单提交)
-				return true;
-			}
-			alert("请输入正确的验证码!");
-			//验证码不正确,表单不允许提交
-
-			return false;
-
-		}
-
-        </script>
+    </style>
 </html>
